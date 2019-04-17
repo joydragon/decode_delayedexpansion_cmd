@@ -1,7 +1,7 @@
 import io,sys,re
 
 if len(sys.argv) != 2:
-	print "ERROR: Se necesita 1 parámetro"
+	print "ERROR: Se necesita 1 parametro"
 	sys.exit(1)
 
 def arreglo_reemplazo(line):
