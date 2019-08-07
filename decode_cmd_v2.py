@@ -1,4 +1,7 @@
+# -*- coding: utf-8 -*-
 import io,sys,re
+reload(sys)
+sys.setdefaultencoding('utf-8')
 
 if len(sys.argv) != 2:
 	print "ERROR: Se necesita 1 parametro"
