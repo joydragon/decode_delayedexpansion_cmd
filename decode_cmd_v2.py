@@ -43,7 +43,7 @@ for line in f:
   aux = re.findall(r'%%', line)
   if len(aux) > 0:
     linea = parse_string(line.rstrip())
-    temp = re.findall(r'StrReverse\("(.*:ptth)"\)', linea)
+    temp = re.findall(r'StrReverse\("(.*ptth)"\)', linea)
     if len(temp) > 0:
         http.append(temp[0][::-1])
     print linea
