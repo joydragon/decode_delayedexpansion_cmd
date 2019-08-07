@@ -35,9 +35,23 @@ f.close()
 reemplazo=arreglo_reemplazo(reemplazo)
 busqueda=arreglo_busqueda(busqueda)
 
+http = []
+
 f = io.open(sys.argv[1],mode="r",encoding="iso-8859-1")
 for line in f:
   aux = re.findall(r'%%', line)
   if len(aux) > 0:
-    print parse_string(line.rstrip())
+    linea = parse_string(line.rstrip())
+    temp = re.findall(r'StrReverse\("(.*ptth)"\)', linea)
+    if len(temp) > 0:
+        http.append(temp[0][::-1])
+    print linea
+  else:
+    print line
 f.close()
+
+print "-"*100
+print "Las URL involucradas son:"
+print "-"*100
+for url in http:
+    print url
